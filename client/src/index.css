@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root[data-theme="dark"], :root {
+    /* Kinetic Obsidian Terminal (Dark Mode) */
+    --color-primary-500: 96 99 238;
+    --color-primary-400: 70 72 212;
+    --color-on-primary: 255 255 255;
+    
+    --color-background: 10 13 20;
+    --color-surface: 15 21 33;
+    --color-surface-container-lowest: 8 10 16;
+    --color-surface-container: 10 12 18;
+    --color-surface-container-low: 11 15 23;
+    --color-surface-container-highest: 50 53 61;
+    --color-surface-variant: 45 49 66;
+    
+    --color-on-surface: 248 249 255;
+    --color-on-surface-variant: 161 161 170;
+    
+    --color-outline: 82 82 91;
+    --color-outline-variant: 255 255 255;
+
+    /* Semantic */
+    --color-secondary-500: 6 182 212;
+    --color-tertiary-500: 16 185 129;
+    
+    --color-success-500: 16 185 129;
+    --color-success-400: 52 211 153;
+    --color-danger-500: 239 68 68;
+    --color-warning-500: 245 158 11;
+    --color-info-500: 59 130 246;
+  }
+
+  :root[data-theme="light"] {
+    /* Kinetic Clarity (Light Mode) */
+    --color-primary-500: 70 72 212;
+    --color-primary-400: 96 99 238;
+    --color-on-primary: 255 255 255;
+    
+    --color-background: 248 249 255;
+    --color-surface: 248 249 255;
+    --color-surface-container-lowest: 255 255 255;
+    --color-surface-container: 245 248 255;
+    --color-surface-container-low: 238 244 255;
+    --color-surface-container-highest: 212 228 250;
+    --color-surface-variant: 212 228 250;
+    
+    --color-on-surface: 13 28 45;
+    --color-on-surface-variant: 70 69 84;
+    
+    --color-outline: 118 117 134;
+    --color-outline-variant: 199 196 215;
+  }
+  
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-on-surface));
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    background-color: var(--surface-variant);
+    backdrop-filter: blur(20px);
+    border: 0.5px solid var(--outline-variant);
+  }
+  
+  .font-numeric {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
