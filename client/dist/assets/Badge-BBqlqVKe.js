@@ -1,0 +1,1 @@
+import{c as e}from"./Skeleton-C_Pfy_Wd.js";var t=e();function n({children:e,color:n=`var(--color-primary-500)`,className:r=``}){return(0,t.jsx)(`span`,{className:`px-2.5 py-1 text-xs font-medium rounded-full ${r}`,style:{backgroundColor:`color-mix(in srgb, ${n} 15%, transparent)`,color:n,border:`0.5px solid color-mix(in srgb, ${n} 30%, transparent)`},children:e})}export{n as t};

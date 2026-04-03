@@ -3,7 +3,6 @@ import { Plus, Download } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { ErrorState } from '@/components/ui/ErrorState';
 import { TransactionFilters } from './components/TransactionFilters';
-import { TransactionSearch } from './components/TransactionSearch';
 import { TransactionTable } from './components/TransactionTable';
 import { TransactionForm } from './components/TransactionForm';
 import { useTransactions } from './hooks/useTransactions';
@@ -77,10 +76,7 @@ export default function TransactionsPage() {
       {/* Filters row */}
       {!error && (
         <>
-          <div className="flex flex-col md:flex-row gap-3">
-            <TransactionSearch />
-            <TransactionFilters filters={filters} setFilter={setFilter} resetFilters={resetFilters} />
-          </div>
+          <TransactionFilters filters={filters} setFilter={setFilter} resetFilters={resetFilters} />
 
           <TransactionTable
             transactions={transactions}
