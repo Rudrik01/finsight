@@ -1,7 +1,7 @@
 import { useState, type FormEvent, useEffect } from 'react';
 import { useTransactionStore } from '../../../store/useTransactionStore';
 import { useToastStore } from '../../../store/useToastStore';
-import { CategoryType, type ITransaction } from '@shared/types';
+import { CategoryType, type ITransaction, type TransactionCategory } from '@shared/types';
 import { Modal } from '../../../components/ui/Modal';
 
 interface TransactionFormProps {
@@ -20,7 +20,7 @@ export function TransactionForm({ isOpen, onClose, transactionToEdit }: Transact
     amount: '',
     description: '',
     type: 'EXPENSE' as 'INCOME' | 'EXPENSE',
-    category: CategoryType.OTHER as CategoryType,
+    category: CategoryType.OTHER as TransactionCategory,
     date: new Date().toISOString().split('T')[0]
   });
 
@@ -38,7 +38,7 @@ export function TransactionForm({ isOpen, onClose, transactionToEdit }: Transact
         amount: '',
         description: '',
         type: 'EXPENSE',
-        category: CategoryType.OTHER as CategoryType,
+        category: CategoryType.OTHER as TransactionCategory,
         date: new Date().toISOString().split('T')[0]
       });
     }
@@ -125,7 +125,7 @@ export function TransactionForm({ isOpen, onClose, transactionToEdit }: Transact
           <label className="text-sm font-medium text-on-surface">Category</label>
           <select
             value={formData.category}
-            onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value as CategoryType }))}
+            onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value as TransactionCategory }))}
             className="bg-surface-container-highest border border-outline-variant/20 rounded-md px-3 py-2 text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
           >
             {Object.values(CategoryType).map(cat => (

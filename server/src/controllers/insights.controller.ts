@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { sendResponse } from '../utils/apiResponse';
-import { transactions as db } from '../data/seed';
-import { TransactionType, CategoryType, ISummary, IMonthlyData, ICategoryBreakdown } from '../../../shared/types';
+import { sendResponse } from '../utils/apiResponse.js';
+import { transactions as db } from '../data/seed.js';
+import { TransactionType, TransactionCategory, ISummary, IMonthlyData, ICategoryBreakdown } from '../../../shared/types/index.js';
 
 // Random delay between 150ms and 400ms
 const simulateLatency = () => new Promise(resolve => setTimeout(resolve, Math.random() * 250 + 150));
@@ -74,7 +74,7 @@ export const getCategories = async (_req: Request, res: Response, next: NextFunc
     });
 
     const breakdown: ICategoryBreakdown[] = Object.entries(catMap).map(([key, amount]) => ({
-      category: key as CategoryType,
+      category: key as TransactionCategory,
       amount,
       percentage: totalExes ? (amount / totalExes) * 100 : 0
     })).sort((a,b) => b.amount - a.amount);

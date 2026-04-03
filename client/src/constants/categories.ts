@@ -1,6 +1,6 @@
-import { CategoryType, TransactionType } from '@/types';
+import { CategoryType, type TransactionCategory, TransactionType } from '@/types';
 
-export const CATEGORY_META: Record<CategoryType, { label: string; color: string; type: TransactionType }> = {
+export const CATEGORY_META: Record<TransactionCategory, { label: string; color: string; type: TransactionType }> = {
   [CategoryType.FOOD]: { label: '🍔 Food & Dining', color: 'rgb(var(--color-primary-500))', type: TransactionType.EXPENSE },
   [CategoryType.TRANSPORT]: { label: '🚗 Transportation', color: 'rgb(var(--color-secondary-500))', type: TransactionType.EXPENSE },
   [CategoryType.HOUSING]: { label: '🏠 Housing & Rent', color: 'rgb(var(--color-tertiary-500))', type: TransactionType.EXPENSE },

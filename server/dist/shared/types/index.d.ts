@@ -15,14 +15,14 @@ export declare const CategoryType: {
     readonly SAVINGS: "SAVINGS";
     readonly OTHER: "OTHER";
 };
-export type CategoryType = typeof CategoryType[keyof typeof CategoryType];
+export type TransactionCategory = typeof CategoryType[keyof typeof CategoryType];
 export interface ITransaction {
     id: string;
     date: string;
     description: string;
     amount: number;
     type: TransactionType;
-    category: CategoryType;
+    category: TransactionCategory;
     createdAt: string;
     updatedAt: string;
 }
@@ -53,7 +53,7 @@ export interface IMonthlyData {
     expense: number;
 }
 export interface ICategoryBreakdown {
-    category: CategoryType;
+    category: TransactionCategory;
     amount: number;
     percentage: number;
 }
@@ -61,7 +61,7 @@ export interface ITransactionQueryParams {
     limit?: number;
     page?: number;
     type?: TransactionType;
-    category?: CategoryType;
+    category?: TransactionCategory;
     startDate?: string;
     endDate?: string;
     search?: string;

@@ -1,4 +1,4 @@
-import { TransactionType, CategoryType } from '../../../shared/types';
+import { TransactionType, CategoryType } from '../../../shared/types/index.js';
 import { v4 as uuidv4 } from 'uuid';
 export const transactions = [
     { id: uuidv4(), date: '2023-10-01T10:00:00Z', description: 'TechCorp Salary', amount: 4500, type: TransactionType.INCOME, category: CategoryType.SALARY, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() },

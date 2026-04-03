@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { sendResponse } from '../utils/apiResponse';
-import { transactions as initialData } from '../data/seed';
-import { ITransaction, ITransactionQueryParams } from '../../../shared/types';
+import { sendResponse } from '../utils/apiResponse.js';
+import { transactions as initialData } from '../data/seed.js';
+import { ITransaction, ITransactionQueryParams } from '../../../shared/types/index.js';
 import { v4 as uuidv4 } from 'uuid';
 
 let db = [...initialData];

@@ -1,4 +1,4 @@
-import { ITransaction, TransactionType, CategoryType } from '../../../shared/types';
+import { ITransaction, TransactionType, CategoryType } from '../../../shared/types/index.js';
 import { v4 as uuidv4 } from 'uuid';
 
 export const transactions: ITransaction[] = [

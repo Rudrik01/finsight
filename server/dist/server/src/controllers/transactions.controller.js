@@ -1,5 +1,5 @@
-import { sendResponse } from '../utils/apiResponse';
-import { transactions as initialData } from '../data/seed';
+import { sendResponse } from '../utils/apiResponse.js';
+import { transactions as initialData } from '../data/seed.js';
 import { v4 as uuidv4 } from 'uuid';
 let db = [...initialData];
 // Random delay between 150ms and 400ms

@@ -1,5 +1,5 @@
 import { Response } from 'express';
-import { IApiResponse } from '../../../shared/types';
+import { IApiResponse } from '../../../shared/types/index.js';
 
 export const sendResponse = <T>(
   res: Response,

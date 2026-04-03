@@ -1,4 +1,4 @@
-import { sendError } from '../utils/apiResponse';
+import { sendError } from '../utils/apiResponse.js';
 export const errorHandler = (err, _req, res, _next) => {
     console.error('[Error]:', err.message || err);
     const statusCode = err.status || 500;

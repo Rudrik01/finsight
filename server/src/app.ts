@@ -1,8 +1,8 @@
 import express, { Express } from 'express';
-import { corsMiddleware } from './middleware/cors';
-import { errorHandler } from './middleware/errorHandler';
-import { requestLogger } from './middleware/requestLogger';
-import { sendResponse } from './utils/apiResponse';
+import { corsMiddleware } from './middleware/cors.js';
+import { errorHandler } from './middleware/errorHandler.js';
+import { requestLogger } from './middleware/requestLogger.js';
+import { sendResponse } from './utils/apiResponse.js';
 
 const app: Express = express();
 
@@ -16,7 +16,7 @@ app.get('/api/health', (_req, res) => {
 });
 
 // API routes mounting
-import routes from './routes';
+import routes from './routes/index.js';
 app.use('/api', routes);
 
 

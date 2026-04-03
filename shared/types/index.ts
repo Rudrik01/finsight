@@ -18,7 +18,7 @@ export const CategoryType = {
   OTHER: 'OTHER',
 } as const;
 
-export type CategoryType = typeof CategoryType[keyof typeof CategoryType];
+export type TransactionCategory = typeof CategoryType[keyof typeof CategoryType];
 
 export interface ITransaction {
   id: string;
@@ -26,7 +26,7 @@ export interface ITransaction {
   description: string;
   amount: number;
   type: TransactionType;
-  category: CategoryType;
+  category: TransactionCategory;
   createdAt: string;
   updatedAt: string;
 }
@@ -63,7 +63,7 @@ export interface IMonthlyData {
 }
 
 export interface ICategoryBreakdown {
-  category: CategoryType;
+  category: TransactionCategory;
   amount: number;
   percentage: number;
 }
@@ -72,7 +72,7 @@ export interface ITransactionQueryParams {
   limit?: number;
   page?: number;
   type?: TransactionType;
-  category?: CategoryType;
+  category?: TransactionCategory;
   startDate?: string;
   endDate?: string;
   search?: string;

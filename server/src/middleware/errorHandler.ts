@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { sendError } from '../utils/apiResponse';
+import { sendError } from '../utils/apiResponse.js';
 
 export const errorHandler = (err: Error & { status?: number; code?: string }, _req: Request, res: Response, _next: NextFunction) => {
   console.error('[Error]:', err.message || err);

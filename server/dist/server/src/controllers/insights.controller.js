@@ -1,6 +1,6 @@
-import { sendResponse } from '../utils/apiResponse';
-import { transactions as db } from '../data/seed';
-import { TransactionType } from '../../../shared/types';
+import { sendResponse } from '../utils/apiResponse.js';
+import { transactions as db } from '../data/seed.js';
+import { TransactionType } from '../../../shared/types/index.js';
 // Random delay between 150ms and 400ms
 const simulateLatency = () => new Promise(resolve => setTimeout(resolve, Math.random() * 250 + 150));
 export const getSummary = async (_req, res, next) => {
