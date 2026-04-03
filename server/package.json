@@ -2,6 +2,7 @@
   "name": "finsight-server",
   "version": "1.0.0",
   "description": "FinSight mock API server",
+  "type": "module",
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsx watch src/index.ts",
